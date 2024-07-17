@@ -20,10 +20,8 @@ def random_choice(choices):
 
 
 def select_image(choice: str):
-    path = f'data/rps/{choice}/'
-    import os
-    files = list(filter(lambda x: not x.startswith('kaggle'), os.listdir(path)))
-    return cv2.imread(path + random.choice(files))
+    path = f'assets/{choice}.jpg'
+    return cv2.imread(path)
 
 
 def check_result(user: str, computer: str):
