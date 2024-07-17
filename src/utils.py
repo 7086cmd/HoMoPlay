@@ -3,7 +3,6 @@ import random
 from src.config import DRAW, WIN, LOSE, NONE
 import cv2
 from src.config import GAME_DIR, AUDIO_DIR
-from src.datasets import dataset as data
 
 
 def timer(sec: int = 3):
