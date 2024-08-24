@@ -1,11 +1,11 @@
 from src.utils import timer, random_choice, select_image, check_result, launch_game
-from src.train import load_model
+from src.train import load_model, train
 from src.recognize import recognise_people_gesture, init_camera
 from src.plot import plot_image
 from src.config import ICON_DIR
 
 
-def main():
+def main_evaluate():
     init_camera()
     load_model('assets/gesture_classifier.pth')
     timer(3)
@@ -18,7 +18,9 @@ def main():
     print(f'Computer: {computer}, User: {user}')
 
 
-if __name__ == '__main__':
-    main()
+def main_training():
+    load_model('assets/gesture_classifier.pth')
+    train(epochs=10, save_model_to='assets/gesture_classifier.pth')
 
-#%%
+if __name__ == '__main__':
+    main_evaluate()

@@ -21,7 +21,7 @@ eval_transform = transforms.Compose([
 ])
 
 dataset = ImageFolder('data/rps', transform=train_transform)
-train_size = int(0.9 * len(dataset))
+train_size = int(0.92 * len(dataset))
 val_size = len(dataset) - train_size
 
 train_dataset, val_dataset = random_split(dataset, [train_size, val_size])
